@@ -105,3 +105,6 @@ RUNS/
 .DS_Store
 README.md
 _config.yml
+.idea
+
+model/
