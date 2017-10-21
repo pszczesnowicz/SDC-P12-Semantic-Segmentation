@@ -107,5 +107,6 @@ README.md
 _config.yml
 .idea
 
+data/
 model/
 videos/

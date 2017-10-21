@@ -1,7 +1,6 @@
 import os.path
 import tensorflow as tf
 import helper
-import warnings
 from distutils.version import LooseVersion
 import project_tests as tests
 
@@ -165,8 +164,8 @@ def run():
     runs_dir = './runs'
     tests.test_for_kitti_dataset(data_dir)
 
-    epochs = 1
-    batch_size = 4
+    epochs = 20
+    batch_size = 128
 
     # Download pre-trained vgg model
     helper.maybe_download_pretrained_vgg(data_dir)
@@ -203,8 +202,6 @@ def run():
 
         # Save inference data using helper.save_inference_samples
         helper.save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, vgg_keep_prob, input_image)
-
-        # OPTIONAL: Apply the trained model to a video
 
 
 if __name__ == '__main__':
