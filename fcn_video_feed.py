@@ -55,10 +55,10 @@ with tf.Session() as sess:
     saver = tf.train.Saver()
 
     # Restore trained FCN model
-    saver.restore(sess, './model/fcn')
+    saver.restore(sess, './model/model_0.01_0.001_0.001_0.9_0.999_1e-8/fcn')
 
     # Feed video to FCN model
     video_input = VideoFileClip('./videos/input/test_video.mp4')
-    video_output = './videos/output/project_video.mp4'
+    video_output = './videos/output/test_video.mp4'
     video_clip = video_input.fl_image(segment)
     video_clip.write_videofile(video_output, audio=False)
